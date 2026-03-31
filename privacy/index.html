@@ -1,1 +1,584 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — DataCanary</title>
+  <meta name="description" content="DataCanary privacy policy. How we collect, use, and protect your data.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --yellow: #F5C842;
+      --yellow-dark: #D9A800;
+      --yellow-light: #FEF7DC;
+      --navy: #1a1f2e;
+      --navy-mid: #2d3548;
+      --gray: #6b7280;
+      --gray-light: #f4f4f2;
+      --border: #e5e3dd;
+      --white: #ffffff;
+      --max: 860px;
+      --font-serif: 'Lora', Georgia, serif;
+      --font-sans: 'DM Sans', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 18px; scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--navy);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      border-bottom: 2px solid var(--navy);
+      padding: 0 2rem;
+      position: sticky;
+      top: 0;
+      background: var(--white);
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--navy);
+    }
+
+    .logo img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+    }
+
+    .logo-text {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 1.2rem;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+    }
+
+    .nav-badge {
+      background: var(--yellow);
+      color: var(--navy);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 2px;
+    }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      border-bottom: 2px solid var(--navy);
+      padding: 4rem 2rem 3rem;
+      background: var(--gray-light);
+    }
+
+    .page-header-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .page-header .breadcrumb {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .page-header .breadcrumb a {
+      color: var(--gray);
+      text-decoration: none;
+    }
+
+    .page-header .breadcrumb a:hover {
+      color: var(--navy);
+    }
+
+    .page-header h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .page-header .meta {
+      font-size: 0.82rem;
+      color: var(--gray);
+    }
+
+    /* ── CONTENT ── */
+    .content {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 4rem 2rem 5rem;
+    }
+
+    /* TOC */
+    .toc {
+      background: var(--yellow-light);
+      border: 2px solid var(--navy);
+      border-radius: 4px;
+      padding: 1.75rem 2rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .toc-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .toc ol {
+      list-style: none;
+      counter-reset: toc-counter;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.4rem 2rem;
+    }
+
+    .toc ol li {
+      counter-increment: toc-counter;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+    }
+
+    .toc ol li::before {
+      content: counter(toc-counter) ".";
+      font-weight: 700;
+      color: var(--navy);
+      flex-shrink: 0;
+      min-width: 1.4em;
+    }
+
+    .toc ol li a {
+      color: var(--navy);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .toc ol li a:hover {
+      color: var(--yellow-dark);
+    }
+
+    /* Sections */
+    .policy-section {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .policy-section:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    .section-number {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .policy-section h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+      margin-bottom: 1.25rem;
+      line-height: 1.25;
+    }
+
+    .policy-section h3 {
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin: 1.75rem 0 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .policy-section p {
+      font-size: 0.95rem;
+      color: var(--navy-mid);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .policy-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .policy-section ul {
+      list-style: none;
+      margin: 0.75rem 0 1rem;
+    }
+
+    .policy-section ul li {
+      font-size: 0.95rem;
+      color: var(--navy-mid);
+      line-height: 1.75;
+      padding: 0.3rem 0 0.3rem 1.4rem;
+      position: relative;
+    }
+
+    .policy-section ul li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--yellow-dark);
+      font-weight: 700;
+    }
+
+    .basis-tag {
+      display: inline-block;
+      background: var(--yellow-light);
+      border: 1.5px solid var(--yellow-dark);
+      border-radius: 2px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--navy);
+      padding: 3px 8px;
+      margin-top: 0.5rem;
+      letter-spacing: 0.03em;
+    }
+
+    /* Contact box */
+    .contact-box {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 4px;
+      padding: 2rem 2.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .contact-box p {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-box a {
+      color: var(--yellow);
+      text-decoration: underline;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 2px solid var(--navy);
+      padding: 1.5rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .footer-inner p {
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+
+    .footer-inner a {
+      color: var(--gray);
+      text-decoration: underline;
+      font-size: 0.8rem;
+    }
+
+    .footer-inner a:hover {
+      color: var(--navy);
+    }
+
+    .page-border {
+      border-top: 6px solid var(--navy);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .toc ol {
+        grid-template-columns: 1fr;
+      }
+
+      .page-header {
+        padding: 3rem 1.5rem 2rem;
+      }
+
+      .content {
+        padding: 3rem 1.5rem 4rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="page-border">
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo">
+        <img src="canary.jpg" alt="DataCanary bird logo">
+        <span class="logo-text">DataCanary</span>
+      </a>
+      <span class="nav-badge">Private Beta</span>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span>›</span>
+        <span>Privacy Policy</span>
+      </div>
+      <h1>Privacy Policy</h1>
+      <p class="meta">Last updated: 31 March 2026</p>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- TOC -->
+    <div class="toc">
+      <span class="toc-label">Contents</span>
+      <ol>
+        <li><a href="#who-we-are">Who we are</a></li>
+        <li><a href="#what-we-collect">What data we collect</a></li>
+        <li><a href="#how-we-use">How we use your data</a></li>
+        <li><a href="#retention">How long we keep it</a></li>
+        <li><a href="#sharing">Who we share data with</a></li>
+        <li><a href="#your-rights">Your rights under GDPR</a></li>
+        <li><a href="#cookies">Cookies</a></li>
+        <li><a href="#security">Data security</a></li>
+        <li><a href="#children">Children's privacy</a></li>
+        <li><a href="#changes">Changes to this policy</a></li>
+        <li><a href="#contact">Contact us</a></li>
+      </ol>
+    </div>
+
+    <!-- 1. Who we are -->
+    <div class="policy-section" id="who-we-are">
+      <span class="section-number">Section 1</span>
+      <h2>Who We Are</h2>
+      <p>DataCanary is a trading name of O'Sullivan Growth Consulting. We operate the DataCanary monitoring service at <strong>app.datacanary.io</strong> and the marketing website at <strong>datacanary.io</strong>.</p>
+      <p>For the purposes of applicable data protection law — including the General Data Protection Regulation (GDPR) and the Irish Data Protection Act 2018 — the data controller is:</p>
+      <p><strong>O'Sullivan Growth Consulting trading as DataCanary</strong><br>Ireland<br>Contact: <a href="mailto:privacy@datacanary.io">privacy@datacanary.io</a></p>
+    </div>
+
+    <!-- 2. What we collect -->
+    <div class="policy-section" id="what-we-collect">
+      <span class="section-number">Section 2</span>
+      <h2>What Data We Collect</h2>
+
+      <h3>Account and identity data</h3>
+      <ul>
+        <li>Your name and email address, collected when you sign in via Google OAuth.</li>
+        <li>Your Google account profile information (name, profile picture) provided by Google during authentication.</li>
+      </ul>
+
+      <h3>Google Analytics data</h3>
+      <p>To provide the monitoring service, DataCanary connects to your Google Analytics 4 (GA4) property using read-only API access. We access:</p>
+      <ul>
+        <li>Event names, event counts, and event parameters from your GA4 property.</li>
+        <li>Session and user metrics from your GA4 property.</li>
+        <li>GA4 property identifiers and configuration metadata.</li>
+      </ul>
+      <p>We store OAuth access tokens and refresh tokens to maintain your connection to the GA4 API. These tokens are encrypted at rest using AES-256-GCM encryption.</p>
+
+      <h3>Usage and analytics data</h3>
+      <p>We use Google Analytics 4 and PostHog on our own websites to understand how visitors use our service. This may include:</p>
+      <ul>
+        <li>Pages visited and features used within the application.</li>
+        <li>Browser type, device type, and approximate location (country/city level).</li>
+        <li>Referral source and session duration.</li>
+      </ul>
+      <p>PostHog is used for product analytics and may record session behaviour to help us improve the service. We use the EU-hosted PostHog Cloud instance.</p>
+
+      <h3>Communications data</h3>
+      <p>If you subscribe to marketing emails or contact us directly, we retain the content of that communication and your email address.</p>
+    </div>
+
+    <!-- 3. How we use -->
+    <div class="policy-section" id="how-we-use">
+      <span class="section-number">Section 3</span>
+      <h2>How We Use Your Data</h2>
+
+      <h3>Providing the service</h3>
+      <p>We use your account data and GA4 property credentials to run daily automated checks on your GA4 property for tracking issues, anomalies, and parameter changes, and to send you alert and summary emails.</p>
+      <span class="basis-tag">Legal basis: Performance of a contract — Article 6(1)(b) GDPR</span>
+
+      <h3>Marketing communications</h3>
+      <p>With your consent, we may send you emails about DataCanary features, updates, and related services such as GA4 audits or implementation services offered by O'Sullivan Growth Consulting.</p>
+      <p>You can withdraw consent and unsubscribe at any time using the link in any marketing email, or by contacting us at <a href="mailto:privacy@datacanary.io">privacy@datacanary.io</a>.</p>
+      <span class="basis-tag">Legal basis: Consent — Article 6(1)(a) GDPR</span>
+
+      <h3>Improving our service</h3>
+      <p>We use aggregated, anonymised usage data from Google Analytics and PostHog to understand how the service is used and to improve features and user experience.</p>
+      <span class="basis-tag">Legal basis: Legitimate interests — Article 6(1)(f) GDPR</span>
+    </div>
+
+    <!-- 4. Retention -->
+    <div class="policy-section" id="retention">
+      <span class="section-number">Section 4</span>
+      <h2>How Long We Keep Your Data</h2>
+      <ul>
+        <li>Check results and monitoring data: retained for 30 days, then automatically deleted.</li>
+        <li>Active issues: retained until resolved or until you delete your property connection.</li>
+        <li>Account and property data: retained for the duration of your account, and deleted within 30 days of account deletion.</li>
+        <li>Marketing communication records: retained until you unsubscribe or request deletion.</li>
+      </ul>
+    </div>
+
+    <!-- 5. Sharing -->
+    <div class="policy-section" id="sharing">
+      <span class="section-number">Section 5</span>
+      <h2>Who We Share Data With</h2>
+      <p>We do not sell your data. We share data only with the following sub-processors necessary to operate the service:</p>
+      <ul>
+        <li><strong>Supabase</strong> — database and authentication. Servers located in the EU.</li>
+        <li><strong>Vercel</strong> — hosting and serverless functions. Covered by the EU–US Data Privacy Framework.</li>
+        <li><strong>Resend</strong> — transactional and marketing email delivery.</li>
+        <li><strong>Google LLC</strong> — OAuth authentication and GA4 API access.</li>
+        <li><strong>PostHog</strong> — product analytics. EU-hosted instance.</li>
+        <li><strong>Inngest</strong> — background job scheduling for daily monitoring runs.</li>
+      </ul>
+      <p>Where sub-processors are located outside the EEA, we rely on Standard Contractual Clauses (SCCs) or adequacy decisions as the lawful transfer mechanism.</p>
+    </div>
+
+    <!-- 6. Your rights -->
+    <div class="policy-section" id="your-rights">
+      <span class="section-number">Section 6</span>
+      <h2>Your Rights Under GDPR</h2>
+      <p>As a data subject under GDPR, you have the following rights:</p>
+      <ul>
+        <li><strong>Access</strong> — you may request a copy of the personal data we hold about you.</li>
+        <li><strong>Rectification</strong> — you may request that we correct inaccurate data.</li>
+        <li><strong>Erasure</strong> — you may request that we delete your personal data, subject to legal obligations.</li>
+        <li><strong>Restriction</strong> — you may request that we restrict processing of your data in certain circumstances.</li>
+        <li><strong>Portability</strong> — you may request your data in a structured, machine-readable format.</li>
+        <li><strong>Object</strong> — you may object to processing based on legitimate interests.</li>
+        <li><strong>Withdraw consent</strong> — where processing is based on consent, you may withdraw it at any time without affecting the lawfulness of prior processing.</li>
+      </ul>
+      <p>To exercise any of these rights, contact us at <a href="mailto:privacy@datacanary.io">privacy@datacanary.io</a>. We will respond within 30 days. You also have the right to lodge a complaint with the <a href="https://www.dataprotection.ie" target="_blank" rel="noopener">Irish Data Protection Commission</a>.</p>
+    </div>
+
+    <!-- 7. Cookies -->
+    <div class="policy-section" id="cookies">
+      <span class="section-number">Section 7</span>
+      <h2>Cookies</h2>
+      <p>Our websites use cookies and similar tracking technologies. Cookies used include:</p>
+      <ul>
+        <li><strong>Session cookies</strong> — required for authentication and to keep you logged in to the app.</li>
+        <li><strong>Analytics cookies</strong> — set by Google Analytics 4 and PostHog to understand usage patterns. These are only set with your consent where required by law.</li>
+      </ul>
+      <p>You can manage cookie preferences through your browser settings. Disabling cookies may affect your ability to use the service.</p>
+    </div>
+
+    <!-- 8. Security -->
+    <div class="policy-section" id="security">
+      <span class="section-number">Section 8</span>
+      <h2>Data Security</h2>
+      <p>We implement appropriate technical and organisational measures to protect your data, including:</p>
+      <ul>
+        <li>AES-256-GCM encryption for stored OAuth tokens.</li>
+        <li>HTTPS encryption for all data in transit.</li>
+        <li>Row-level security on our database, ensuring users can only access their own data.</li>
+        <li>Regular review of access controls and third-party integrations.</li>
+      </ul>
+      <p>No method of transmission or storage is 100% secure. If you become aware of any security concern, please contact us immediately at <a href="mailto:privacy@datacanary.io">privacy@datacanary.io</a>.</p>
+    </div>
+
+    <!-- 9. Children -->
+    <div class="policy-section" id="children">
+      <span class="section-number">Section 9</span>
+      <h2>Children's Privacy</h2>
+      <p>DataCanary is not directed at children under 16 years of age. We do not knowingly collect personal data from children. If you believe we have inadvertently collected data from a child, please contact us and we will delete it promptly.</p>
+    </div>
+
+    <!-- 10. Changes -->
+    <div class="policy-section" id="changes">
+      <span class="section-number">Section 10</span>
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top of this page. Where changes are material, we will notify you by email. Continued use of the service after the effective date constitutes acceptance of the updated policy.</p>
+    </div>
+
+    <!-- 11. Contact -->
+    <div class="policy-section" id="contact">
+      <span class="section-number">Section 11</span>
+      <h2>Contact Us</h2>
+      <p>For any privacy-related questions or to exercise your rights, get in touch:</p>
+      <div class="contact-box">
+        <p><strong style="color: var(--white);">O'Sullivan Growth Consulting trading as DataCanary</strong></p>
+        <p>Email: <a href="mailto:privacy@datacanary.io">privacy@datacanary.io</a></p>
+        <p>Website: <a href="https://datacanary.io">datacanary.io</a></p>
+        <p>Ireland</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p>© 2026 DataCanary — O'Sullivan Growth Consulting</p>
+      <a href="/">← Back to home</a>
+    </div>
+  </footer>
+
+</body>
+</html>
