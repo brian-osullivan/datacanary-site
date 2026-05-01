@@ -92,17 +92,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       color: var(--navy);
     }
 
-    .nav-badge {
-      background: var(--yellow);
-      color: var(--navy);
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 2px;
-    }
-
     /* ── HERO ── */
     .hero {
       padding: 5rem 2rem 0;
@@ -155,51 +144,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       display: block;
     }
 
-    /* ── FORM ── */
-    .signup-form {
-      display: flex;
-      gap: 0;
-      max-width: 460px;
-      margin-bottom: 0.75rem;
-    }
-
-    .signup-form input[type="email"] {
-      flex: 1;
-      padding: 0.75rem 1rem;
-      font-family: var(--font-sans);
-      font-size: 0.9rem;
-      border: 2px solid var(--navy);
-      border-right: none;
-      border-radius: 3px 0 0 3px;
-      outline: none;
-      color: var(--navy);
-      background: var(--white);
-      transition: border-color 0.15s;
-    }
-
-    .signup-form input[type="email"]:focus {
-      border-color: var(--yellow-dark);
-    }
-
-    .signup-form input[type="email"]::placeholder {
-      color: #aaa;
-    }
-
-    .signup-form button {
-      padding: 0.75rem 1.4rem;
+    /* ── CTA BUTTON ── */
+    .cta-button {
+      display: inline-block;
+      padding: 0.8rem 1.75rem;
       background: var(--navy);
       color: var(--white);
       font-family: var(--font-sans);
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       font-weight: 600;
+      text-decoration: none;
       border: 2px solid var(--navy);
-      border-radius: 0 3px 3px 0;
-      cursor: pointer;
-      white-space: nowrap;
+      border-radius: 3px;
       transition: background 0.15s, color 0.15s;
+      margin-bottom: 0.75rem;
     }
 
-    .signup-form button:hover {
+    .cta-button:hover {
       background: var(--yellow);
       color: var(--navy);
       border-color: var(--navy);
@@ -208,30 +169,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .form-note {
       font-size: 0.78rem;
       color: var(--gray);
+      display: block;
     }
-
-    .success-message {
-      display: none;
-      background: var(--yellow-light);
-      border: 2px solid var(--yellow-dark);
-      border-radius: 4px;
-      padding: 1rem 1.25rem;
-      font-size: 0.9rem;
-      color: var(--navy);
-      max-width: 460px;
-      font-weight: 500;
-    }
-
-    .success-message.visible { display: block; }
-
-    .error-message {
-      display: none;
-      color: #c0392b;
-      font-size: 0.82rem;
-      margin-top: 0.4rem;
-    }
-
-    .error-message.visible { display: block; }
 
     /* ── DIVIDER ── */
     hr {
@@ -494,20 +433,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
       .footer-cta-bird { display: none; }
 
-      .signup-form {
-        flex-direction: column;
-        max-width: 100%;
-      }
-
-      .signup-form input[type="email"] {
-        border-right: 2px solid var(--navy);
-        border-radius: 3px;
-        border-bottom: none;
-        border-radius: 3px 3px 0 0;
-      }
-
-      .signup-form button {
-        border-radius: 0 0 3px 3px;
+      .cta-button {
+        width: 100%;
+        text-align: center;
       }
     }
   </style>
@@ -527,10 +455,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <img src="canary.jpg" alt="DataCanary bird logo">
         <span class="logo-text">DataCanary</span>
       </a>
-      <div style="display: flex; align-items: center; gap: 1rem;">
-        <a href="https://app.datacanary.io/login" style="font-family: var(--font-sans); font-size: 0.85rem; font-weight: 600; color: var(--navy); text-decoration: none; letter-spacing: -0.01em;" onmouseover="this.style.color='var(--yellow-dark)'" onmouseout="this.style.color='var(--navy)'">Log in →</a>
-        <span class="nav-badge">Private Beta</span>
-      </div>
+      <a href="https://app.datacanary.io/login" style="font-family: var(--font-sans); font-size: 0.85rem; font-weight: 600; color: var(--navy); text-decoration: none; letter-spacing: -0.01em;" onmouseover="this.style.color='var(--yellow-dark)'" onmouseout="this.style.color='var(--navy)'">Log in →</a>
     </div>
   </nav>
 
@@ -542,18 +467,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h1>Get alerts when your GA4 tracking&nbsp;breaks</h1>
         <p>You can't be data driven without reliable data. But website and tag manager changes routinely break your tracking. DataCanary watches your GA4 property daily and alerts you the moment something looks off.</p>
 
-        <div id="form-wrap">
-          <form class="signup-form" id="signup-form" novalidate>
-            <input type="email" id="email-input" placeholder="you@company.com" autocomplete="email" required>
-            <button type="submit">Get early access</button>
-          </form>
-          <p class="form-note">Joining the beta is free. No credit card required.</p>
-          <p class="error-message" id="error-msg">Please enter a valid email address.</p>
-        </div>
-
-        <div class="success-message" id="success-msg">
-          ✓ &nbsp;You're on the list. We'll be in touch shortly with access.
-        </div>
+        <a href="https://app.datacanary.io/signup" class="cta-button">Monitor my GA4 for free</a>
+        <span class="form-note">Free to use. No credit card required.</span>
       </div>
 
       <div class="hero-illustration">
@@ -634,21 +549,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div style="border-top: 2px solid var(--navy); border-bottom: 2px solid var(--navy);">
     <div class="footer-cta">
       <div>
-        <h2>Get early access</h2>
-        <p>DataCanary is in private beta. Sign up and we'll send you access.</p>
-
-        <div id="form-wrap-2">
-          <form class="signup-form" id="signup-form-2" novalidate>
-            <input type="email" id="email-input-2" placeholder="you@company.com" autocomplete="email" required>
-            <button type="submit">Get early access</button>
-          </form>
-          <p class="form-note" style="margin-top: 0.5rem;">Free to use. No credit card. No spam.</p>
-          <p class="error-message" id="error-msg-2">Please enter a valid email address.</p>
-        </div>
-
-        <div class="success-message" id="success-msg-2">
-          ✓ &nbsp;You're on the list. We'll be in touch shortly with access.
-        </div>
+        <h2>Start monitoring your GA4</h2>
+        <p>Free to use. Set up in 2 minutes. No credit card required.</p>
+        <a href="https://app.datacanary.io/signup" class="cta-button">Monitor my GA4 for free</a>
       </div>
 
       <img src="canary.jpg" alt="" class="footer-cta-bird" aria-hidden="true">
@@ -662,70 +565,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="/privacy">Privacy Policy</a>
     </div>
   </footer>
-
-  <script>
-    const ENDPOINT = '/api/subscribe';
-
-    function isValidEmail(email) {
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
-    }
-
-    async function handleSubmit(formId, emailId, errorId, successId, wrapId) {
-      const form = document.getElementById(formId);
-      const emailInput = document.getElementById(emailId);
-      const errorMsg = document.getElementById(errorId);
-      const successMsg = document.getElementById(successId);
-      const formWrap = document.getElementById(wrapId);
-
-      const email = emailInput.value.trim();
-
-      errorMsg.classList.remove('visible');
-
-      if (!isValidEmail(email)) {
-        errorMsg.classList.add('visible');
-        emailInput.focus();
-        return;
-      }
-
-      const btn = form.querySelector('button');
-      btn.textContent = 'Sending…';
-      btn.disabled = true;
-
-      try {
-        const res = await fetch(ENDPOINT, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email })
-        });
-
-        if (res.ok) {
-          formWrap.style.display = 'none';
-          successMsg.classList.add('visible');
-        } else {
-          const data = await res.json().catch(() => ({}));
-          errorMsg.textContent = data.error || 'Something went wrong. Please try again.';
-          errorMsg.classList.add('visible');
-          btn.textContent = 'Get early access';
-          btn.disabled = false;
-        }
-      } catch (e) {
-        errorMsg.textContent = 'Network error. Please try again.';
-        errorMsg.classList.add('visible');
-        btn.textContent = 'Get early access';
-        btn.disabled = false;
-      }
-    }
-
-    document.getElementById('signup-form').addEventListener('submit', (e) => {
-      e.preventDefault();
-      handleSubmit('signup-form', 'email-input', 'error-msg', 'success-msg', 'form-wrap');
-    });
-
-    document.getElementById('signup-form-2').addEventListener('submit', (e) => {
-      e.preventDefault();
-      handleSubmit('signup-form-2', 'email-input-2', 'error-msg-2', 'success-msg-2', 'form-wrap-2');
-    });
-  </script>
 
 </body>
 </html>
