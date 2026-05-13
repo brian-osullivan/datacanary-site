@@ -329,6 +329,53 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       border-bottom: 2px solid var(--navy);
     }
 
+    /* ── SECURITY ── */
+    .security-section {
+      border-top: 2px solid var(--navy);
+      border-bottom: 2px solid var(--navy);
+    }
+
+    .security-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: 2.5rem;
+      border: 2px solid var(--navy);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .security-card {
+      padding: 1.75rem;
+      border-right: 2px solid var(--navy);
+    }
+
+    .security-card:last-child {
+      border-right: none;
+    }
+
+    .security-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .security-card p {
+      font-size: 0.85rem;
+      color: var(--gray);
+      line-height: 1.6;
+      max-width: none;
+    }
+
+    .security-icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
     /* ── FOOTER CTA ── */
     .footer-cta {
       padding: 5rem 2rem;
@@ -424,6 +471,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .steps {
         grid-template-columns: 1fr;
         gap: 2rem;
+      }
+
+      .security-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .security-card {
+        border-right: none;
+        border-bottom: 2px solid var(--navy);
+      }
+
+      .security-card:last-child {
+        border-bottom: none;
       }
 
       .footer-cta {
@@ -542,6 +602,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="section-label">Who it's for</span>
       <h2>Built for anyone who relies on clean GA4 data</h2>
       <p>Whether you're a marketer tracking campaign performance, a web analyst responsible for an analytics implementation, or an agency managing properties for clients — bad data costs you. DataCanary gives you confidence that what you're looking at is accurate.</p>
+    </div>
+  </div>
+
+  <!-- SECURITY -->
+  <div class="security-section">
+    <div class="section" style="border-bottom: none;">
+      <span class="section-label">Security</span>
+      <h2>Your data stays yours</h2>
+
+      <div class="security-cards">
+        <div class="security-card">
+          <span class="security-icon">🔒</span>
+          <h3>Read-only GA4 access</h3>
+          <p>We use Google OAuth with analytics read-only scope. DataCanary cannot make any changes to your GA4 property or your Google account.</p>
+        </div>
+        <div class="security-card">
+          <span class="security-icon">🗄️</span>
+          <h3>No raw data stored</h3>
+          <p>We don't store your event data. We run checks against it daily and store the results — counts, aggregates, anomaly flags. Not the underlying records.</p>
+        </div>
+        <div class="security-card">
+          <span class="security-icon">🔑</span>
+          <h3>Encrypted credentials</h3>
+          <p>Your Google OAuth tokens are encrypted at rest using AES-256 encryption. They're used only to run your daily checks.</p>
+        </div>
+      </div>
     </div>
   </div>
 
