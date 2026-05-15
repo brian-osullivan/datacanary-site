@@ -53,45 +53,140 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
     /* ── NAV ── */
-    nav {
-      border-bottom: 2px solid var(--navy);
-      padding: 0 2rem;
-      position: sticky;
-      top: 0;
-      background: var(--white);
-      z-index: 100;
-    }
-
-    .nav-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 64px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: var(--navy);
-    }
-
-    .logo img {
-      width: 36px;
-      height: 36px;
-      object-fit: contain;
-    }
-
-    .logo-text {
-      font-family: var(--font-serif);
-      font-weight: 700;
-      font-size: 1.2rem;
-      letter-spacing: -0.02em;
-      color: var(--navy);
-    }
+nav {
+  border-bottom: 2px solid var(--navy);
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  background: var(--white);
+  z-index: 100;
+}
+ 
+.nav-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+ 
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--navy);
+}
+ 
+.logo img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+ 
+.logo-text {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+}
+ 
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+ 
+.nav-links a {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+ 
+.nav-links a:hover {
+  color: var(--yellow-dark);
+}
+ 
+/* Hamburger button */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+ 
+.nav-hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--navy);
+  border-radius: 2px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+ 
+/* Hamburger → X when open */
+.nav-hamburger.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-hamburger.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+ 
+/* Mobile drawer */
+.nav-drawer {
+  display: none;
+  flex-direction: column;
+  background: var(--white);
+  border-bottom: 2px solid var(--navy);
+  padding: 1rem 2rem 1.5rem;
+  gap: 0;
+}
+ 
+.nav-drawer.is-open {
+  display: flex;
+}
+ 
+.nav-drawer a {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+}
+ 
+.nav-drawer a:last-child {
+  border-bottom: none;
+}
+ 
+.nav-drawer a:hover {
+  color: var(--yellow-dark);
+}
+ 
+@media (max-width: 600px) {
+  .nav-links {
+    display: none;
+  }
+  .nav-hamburger {
+    display: flex;
+  }
+}
 
     /* ── HERO ── */
     .hero {
@@ -510,19 +605,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
   <!-- NAV -->
-  <nav>
-    <div class="nav-inner">
-      <a href="/" class="logo">
-        <img src="canary.jpg" alt="DataCanary bird logo">
-        <span class="logo-text">DataCanary</span>
-      </a>
-      <div style="display: flex; align-items: center; gap: 1.5rem;">
-        <a href="/pricing" style="font-family: var(--font-sans); font-size: 0.85rem; font-weight: 600; color: var(--navy); text-decoration: none; letter-spacing: -0.01em;" onmouseover="this.style.color='var(--yellow-dark)'" onmouseout="this.style.color='var(--navy)'">Pricing</a>
-        <a href="/security" style="font-family: var(--font-sans); font-size: 0.85rem; font-weight: 600; color: var(--navy); text-decoration: none; letter-spacing: -0.01em;" onmouseover="this.style.color='var(--yellow-dark)'" onmouseout="this.style.color='var(--navy)'">Security</a>
-        <a href="https://app.datacanary.io/login" style="font-family: var(--font-sans); font-size: 0.85rem; font-weight: 600; color: var(--navy); text-decoration: none; letter-spacing: -0.01em;" onmouseover="this.style.color='var(--yellow-dark)'" onmouseout="this.style.color='var(--navy)'">Log in →</a>
-      </div>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <img src="canary.jpg" alt="DataCanary bird logo">
+      <span class="logo-text">DataCanary</span>
+    </a>
+    <div class="nav-links">
+      <a href="/pricing">Pricing</a>
+      <a href="/security">Security</a>
+      <a href="https://app.datacanary.io/login">Log in →</a>
     </div>
-  </nav>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+ 
+<!-- Mobile drawer — place immediately after </nav> -->
+<div class="nav-drawer" id="nav-drawer">
+  <a href="/pricing">Pricing</a>
+  <a href="/security">Security</a>
+  <a href="https://app.datacanary.io/login">Log in →</a>
+</div>
 
   <!-- HERO -->
   <div style="border-bottom: 2px solid var(--navy);">
@@ -656,6 +763,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="/privacy">Privacy Policy</a>
     </div>
   </footer>
+
+  <script>
+  const hamburger = document.querySelector('.nav-hamburger');
+  const drawer = document.getElementById('nav-drawer');
+ 
+  hamburger.addEventListener('click', function () {
+    const isOpen = drawer.classList.toggle('is-open');
+    hamburger.classList.toggle('is-open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+    hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+</script>
 
 </body>
 </html>
