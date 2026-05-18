@@ -472,6 +472,82 @@ nav {
       display: block;
     }
 
+    /* ── FAQ ── */
+    .faq-section {
+      border-top: 2px solid var(--navy);
+      border-bottom: 2px solid var(--navy);
+    }
+
+    .faq-list {
+      margin-top: 2.5rem;
+      border: 2px solid var(--navy);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .faq-item {
+      border-bottom: 2px solid var(--navy);
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.25rem 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .faq-question:hover {
+      background: var(--gray-light);
+    }
+
+    .faq-question span {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.3;
+    }
+
+    .faq-icon {
+      font-size: 1.2rem;
+      color: var(--gray);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+      font-style: normal;
+    }
+
+    .faq-item.is-open .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 1.75rem 1.5rem;
+      font-size: 0.88rem;
+      color: var(--gray);
+      line-height: 1.75;
+      max-width: 680px;
+    }
+
+    .faq-answer a {
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .faq-item.is-open .faq-answer {
+      display: block;
+    }
+
     /* ── FOOTER CTA ── */
     .footer-cta {
       padding: 5rem 2rem;
@@ -624,7 +700,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </nav>
  
-<!-- Mobile drawer — place immediately after </nav> -->
+<!-- Mobile drawer -->
 <div class="nav-drawer" id="nav-drawer">
   <a href="/pricing">Pricing</a>
   <a href="/security">Security</a>
@@ -743,6 +819,98 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 
+  <!-- FAQ -->
+  <div class="faq-section">
+    <div class="section" style="border-bottom: none;">
+      <span class="section-label">FAQ</span>
+      <h2>Common questions</h2>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Why is it free?</span>
+            <i class="faq-icon">+</i>
+          </button>
+          <div class="faq-answer">
+            The free version offers daily monitoring and core alerting. A paid tier is coming with more frequent checks, additional check types, and real-time monitoring. We will never sell your data.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What access does it have to my GA4 property?</span>
+            <i class="faq-icon">+</i>
+          </button>
+          <div class="faq-answer">
+            Read-only access only, via Google OAuth with the <code>analytics.readonly</code> scope. DataCanary cannot make any changes to your GA4 property, your account settings, or your Google account. You can verify this yourself on the Google permissions screen when you connect.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can it see my raw event data or user records?</span>
+            <i class="faq-icon">+</i>
+          </button>
+          <div class="faq-answer">
+            No. The GA4 Data API only returns aggregated data — DataCanary never has access to individual user records or raw hit-level data. We store event counts, aggregates, and anomaly flags. Not the underlying records.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Is it Google verified?</span>
+            <i class="faq-icon">+</i>
+          </button>
+          <div class="faq-answer">
+            Yes. DataCanary has passed Google's OAuth verification process for sensitive scopes. Our use of <code>analytics.readonly</code> has been reviewed and approved by Google. The app is in Production status, not testing mode.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How does it decide something is wrong?</span>
+            <i class="faq-icon">+</i>
+          </button>
+          <div class="faq-answer">
+            DataCanary uses statistical anomaly detection on a 90-day baseline. It flags events that drop to zero, fall significantly outside their normal range, or show parameters disappearing.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How often does it check?</span>
+            <i class="faq-icon">+</i>
+          </button>
+          <div class="faq-answer">
+            Daily. Checks run automatically — you don't need to do anything after setup.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Will it stay free?</span>
+            <i class="faq-icon">+</i>
+          </button>
+          <div class="faq-answer">
+            Free access for the current feature set will remain available. A paid tier is coming for Slack alerts, higher check frequency, and other power user features. You won't be forced onto a paid plan for what's free today.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Who built this?</span>
+            <i class="faq-icon">+</i>
+          </button>
+          <div class="faq-answer">
+            DataCanary is built by Brian O'Sullivan, based in Ireland. Brian previously worked on the Google Analytics team.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <!-- FOOTER CTA -->
   <div style="border-top: 2px solid var(--navy); border-bottom: 2px solid var(--navy);">
     <div class="footer-cta">
@@ -773,6 +941,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     hamburger.classList.toggle('is-open', isOpen);
     hamburger.setAttribute('aria-expanded', isOpen);
     hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('is-open');
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(function(el) {
+        el.classList.remove('is-open');
+      });
+      // Open clicked if it wasn't already open
+      if (!isOpen) {
+        item.classList.add('is-open');
+      }
+    });
   });
 </script>
 
