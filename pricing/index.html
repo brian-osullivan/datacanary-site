@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pricing | DataCanary</title>
   <meta name="description" content="DataCanary is free to use. Monitor unlimited GA4 properties, get daily automated checks, and receive email alerts when something breaks.">
-
   <link rel="icon" href="/favicon.ico">
-
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -16,525 +13,213 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-M425WQP7');</script>
   <!-- End Google Tag Manager -->
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-
   <style>
     :root {
-      --yellow: #F5C842;
-      --yellow-dark: #D9A800;
-      --yellow-light: #FEF7DC;
-      --navy: #1a1f2e;
-      --navy-mid: #2d3548;
-      --gray: #6b7280;
-      --gray-light: #f4f4f2;
-      --border: #e5e3dd;
-      --white: #ffffff;
-      --max: 860px;
-      --font-serif: 'Lora', Georgia, serif;
+      --yellow: #F5C842; --yellow-dark: #D9A800; --yellow-light: #FEF7DC;
+      --navy: #1a1f2e; --navy-mid: #2d3548; --gray: #6b7280;
+      --gray-light: #f4f4f2; --border: #e5e3dd; --white: #ffffff;
+      --max: 860px; --font-serif: 'Lora', Georgia, serif;
       --font-sans: 'DM Sans', system-ui, sans-serif;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { font-size: 18px; scroll-behavior: smooth; }
-    body {
-      font-family: var(--font-sans);
-      color: var(--navy);
-      background: var(--white);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
+    body { font-family: var(--font-sans); color: var(--navy); background: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
 
-    /* ── NAV ── */
-nav {
-  border-bottom: 2px solid var(--navy);
-  padding: 0 2rem;
-  position: sticky;
-  top: 0;
-  background: var(--white);
-  z-index: 100;
-}
- 
-.nav-inner {
-  max-width: var(--max);
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 64px;
-}
- 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: var(--navy);
-}
- 
-.logo img {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
-}
- 
-.logo-text {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-size: 1.2rem;
-  letter-spacing: -0.02em;
-  color: var(--navy);
-}
- 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
- 
-.nav-links a {
-  font-family: var(--font-sans);
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--navy);
-  text-decoration: none;
-  letter-spacing: -0.01em;
-}
- 
-.nav-links a:hover {
-  color: var(--yellow-dark);
-}
- 
-/* Hamburger button */
-.nav-hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  width: 36px;
-  height: 36px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
-}
- 
-.nav-hamburger span {
-  display: block;
-  width: 100%;
-  height: 2px;
-  background: var(--navy);
-  border-radius: 2px;
-  transition: transform 0.2s, opacity 0.2s;
-}
- 
-/* Hamburger → X when open */
-.nav-hamburger.is-open span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-.nav-hamburger.is-open span:nth-child(2) {
-  opacity: 0;
-}
-.nav-hamburger.is-open span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
- 
-/* Mobile drawer */
-.nav-drawer {
-  display: none;
-  flex-direction: column;
-  background: var(--white);
-  border-bottom: 2px solid var(--navy);
-  padding: 1rem 2rem 1.5rem;
-  gap: 0;
-}
- 
-.nav-drawer.is-open {
-  display: flex;
-}
- 
-.nav-drawer a {
-  font-family: var(--font-sans);
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--navy);
-  text-decoration: none;
-  letter-spacing: -0.01em;
-  padding: 0.85rem 0;
-  border-bottom: 1px solid var(--border);
-}
- 
-.nav-drawer a:last-child {
-  border-bottom: none;
-}
- 
-.nav-drawer a:hover {
-  color: var(--yellow-dark);
-}
- 
-@media (max-width: 600px) {
-  .nav-links {
-    display: none;
-  }
-  .nav-hamburger {
-    display: flex;
-  }
-}
+    /* NAV */
+    nav { border-bottom: 2px solid var(--navy); padding: 0 2rem; position: sticky; top: 0; background: var(--white); z-index: 100; }
+    .nav-inner { max-width: var(--max); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--navy); }
+    .logo img { width: 36px; height: 36px; object-fit: contain; }
+    .logo-text { font-family: var(--font-serif); font-weight: 700; font-size: 1.2rem; letter-spacing: -0.02em; }
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+    .nav-links a { font-family: var(--font-sans); font-size: 0.85rem; font-weight: 600; color: var(--navy); text-decoration: none; letter-spacing: -0.01em; }
+    .nav-links a:hover { color: var(--yellow-dark); }
+    .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 100%; height: 2px; background: var(--navy); border-radius: 2px; transition: transform 0.2s, opacity 0.2s; }
+    .nav-hamburger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.is-open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-drawer { display: none; flex-direction: column; background: var(--white); border-bottom: 2px solid var(--navy); padding: 1rem 2rem 1.5rem; }
+    .nav-drawer.is-open { display: flex; }
+    .nav-drawer a { font-size: 1rem; font-weight: 600; color: var(--navy); text-decoration: none; padding: 0.85rem 0; border-bottom: 1px solid var(--border); }
+    .nav-drawer a:last-child { border-bottom: none; }
+    .nav-drawer a:hover { color: var(--yellow-dark); }
+    @media (max-width: 600px) { .nav-links { display: none; } .nav-hamburger { display: flex; } }
 
-    /* ── SECTION ── */
-    .section {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 4rem 2rem;
-    }
-    .section-label {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gray);
-      margin-bottom: 1rem;
-      display: block;
-    }
-    .section h2 {
-      font-family: var(--font-serif);
-      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
-      font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      color: var(--navy);
-      margin-bottom: 1.25rem;
-    }
+    /* PRICING HEADER */
+    .pricing-header { max-width: var(--max); margin: 0 auto; padding: 3rem 2rem 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .pricing-header h1 { font-family: var(--font-serif); font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 700; letter-spacing: -0.02em; }
+    .currency-toggle { display: flex; border: 2px solid var(--navy); border-radius: 3px; overflow: hidden; flex-shrink: 0; }
+    .currency-toggle button { padding: 0.4rem 1rem; font-family: var(--font-sans); font-size: 0.82rem; font-weight: 600; border: none; background: var(--white); color: var(--gray); cursor: pointer; transition: background 0.15s, color 0.15s; border-right: 2px solid var(--navy); }
+    .currency-toggle button:last-child { border-right: none; }
+    .currency-toggle button.active { background: var(--navy); color: var(--white); }
 
-    /* ── PRICING CARD ── */
-    .pricing-wrap {
-      border-bottom: 2px solid var(--navy);
-    }
-    .plan-card {
-      border: 2px solid var(--navy);
-      border-radius: 4px;
-      overflow: hidden;
-      margin-top: 2.5rem;
-    }
-    .plan-header {
-      background: var(--navy);
-      color: var(--white);
-      padding: 2rem 2.5rem;
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-    .plan-name {
-      font-family: var(--font-serif);
-      font-size: 1.4rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.3rem;
-    }
-    .plan-tagline {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.65);
-      line-height: 1.5;
-    }
-    .plan-price {
-      text-align: right;
-      flex-shrink: 0;
-    }
-    .plan-price .amount {
-      font-family: var(--font-serif);
-      font-size: 2.8rem;
-      font-weight: 700;
-      line-height: 1;
-      color: var(--yellow);
-      letter-spacing: -0.03em;
-    }
-    .plan-price .period {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.5);
-      margin-top: 0.25rem;
-    }
+    /* PLANS */
+    .pricing-wrap { border-bottom: 2px solid var(--navy); }
+    .plans-grid { max-width: var(--max); margin: 0 auto; padding: 2rem 2rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: stretch; }
+    .plan-card { border: 2px solid var(--navy); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; }
+    .plan-card.featured { box-shadow: 6px 6px 0 var(--navy); }
+    .plan-header { padding: 1.75rem 2rem; display: flex; flex-direction: column; }
+    .plan-card:not(.featured) .plan-header { background: var(--gray-light); }
+    .plan-card.featured .plan-header { background: var(--navy); color: var(--white); }
+    /* Badge row reserves identical height on both cards so plan-name lines up */
+    .plan-badge-row { height: 28px; display: flex; align-items: center; margin-bottom: 0.1rem; }
+    .plan-badge { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; background: var(--yellow); color: var(--navy); border: 1.5px solid var(--navy); border-radius: 2px; padding: 0.2rem 0.5rem; }
+    .plan-name { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.25rem; }
+    .plan-tagline { font-size: 0.82rem; line-height: 1.5; flex-grow: 1; }
+    .plan-card.featured .plan-tagline { color: rgba(255,255,255,0.6); }
+    .plan-card:not(.featured) .plan-tagline { color: var(--gray); }
+    /* Price sits at bottom of header, separated by a rule */
+    .plan-price-row { display: flex; align-items: baseline; gap: 0.3rem; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(0,0,0,0.1); }
+    .plan-card.featured .plan-price-row { border-top-color: rgba(255,255,255,0.15); }
+    .plan-amount { font-family: var(--font-serif); font-size: 2.4rem; font-weight: 700; line-height: 1; letter-spacing: -0.03em; }
+    .plan-card.featured .plan-amount { color: var(--yellow); }
+    .plan-card:not(.featured) .plan-amount { color: var(--navy); }
+    .plan-period { font-size: 0.8rem; }
+    .plan-card.featured .plan-period { color: rgba(255,255,255,0.5); }
+    .plan-card:not(.featured) .plan-period { color: var(--gray); }
+    .plan-body { padding: 1.75rem 2rem; background: var(--white); flex-grow: 1; display: flex; flex-direction: column; }
+    .plan-features { list-style: none; margin-bottom: 1.75rem; flex-grow: 1; }
+    .plan-features li { display: flex; align-items: flex-start; gap: 0.65rem; padding: 0.6rem 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; color: var(--navy-mid); line-height: 1.5; }
+    .plan-features li:last-child { border-bottom: none; }
+    .plan-features li strong { color: var(--navy); font-weight: 600; }
+    .feature-divider { font-size: 0.68rem !important; font-weight: 700 !important; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray) !important; padding: 0.9rem 0 0.1rem !important; border-bottom: none !important; }
+    .check { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; background: var(--yellow); border: 1.5px solid var(--navy); border-radius: 50%; font-size: 0.6rem; flex-shrink: 0; margin-top: 2px; font-weight: 700; color: var(--navy); }
+    .cta-button { display: block; width: 100%; text-align: center; padding: 0.8rem 1.5rem; background: var(--navy); color: var(--white); font-family: var(--font-sans); font-size: 0.9rem; font-weight: 600; text-decoration: none; border: 2px solid var(--navy); border-radius: 3px; transition: background 0.15s, color 0.15s; }
+    .cta-button:hover { background: var(--yellow); color: var(--navy); }
+    .cta-button.outline { background: var(--white); color: var(--navy); }
+    .cta-button.outline:hover { background: var(--yellow); }
+    .form-note { font-size: 0.75rem; color: var(--gray); display: block; margin-top: 0.6rem; text-align: center; }
 
-    .plan-body {
-      padding: 2.5rem;
-      background: var(--white);
-    }
-    .plan-features {
-      list-style: none;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      border: 2px solid var(--navy);
-      border-radius: 3px;
-      overflow: hidden;
-      margin-bottom: 2rem;
-    }
-    .plan-features li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      padding: 1.1rem 1.25rem;
-      border-right: 2px solid var(--navy);
-      border-bottom: 2px solid var(--navy);
-      font-size: 0.9rem;
-      color: var(--navy-mid);
-      line-height: 1.5;
-    }
-    .plan-features li:nth-child(2n) {
-      border-right: none;
-    }
-    .plan-features li:nth-last-child(-n+2) {
-      border-bottom: none;
-    }
-    /* if odd number, last item spans */
-    .plan-features li.span-full {
-      grid-column: 1 / -1;
-      border-right: none;
-    }
-    .check {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 20px;
-      height: 20px;
-      background: var(--yellow);
-      border: 2px solid var(--navy);
-      border-radius: 50%;
-      font-size: 0.65rem;
-      flex-shrink: 0;
-      margin-top: 1px;
-      font-weight: 700;
-      color: var(--navy);
-    }
+    /* FAQ */
+    .faq-wrap { border-top: 2px solid var(--navy); border-bottom: 2px solid var(--navy); background: var(--gray-light); }
+    .section { max-width: var(--max); margin: 0 auto; padding: 4rem 2rem; }
+    .section-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); margin-bottom: 1rem; display: block; }
+    .section h2 { font-family: var(--font-serif); font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; color: var(--navy); margin-bottom: 1.25rem; }
+    .faq-list { margin-top: 2rem; border: 2px solid var(--navy); border-radius: 4px; overflow: hidden; }
+    .faq-item { border-bottom: 2px solid var(--navy); padding: 1.5rem 1.75rem; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-item h3 { font-family: var(--font-serif); font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; line-height: 1.4; }
+    .faq-item p { font-size: 0.88rem; color: var(--gray); line-height: 1.7; max-width: 640px; }
 
-    .cta-button {
-      display: inline-block;
-      padding: 0.85rem 2rem;
-      background: var(--navy);
-      color: var(--white);
-      font-family: var(--font-sans);
-      font-size: 0.95rem;
-      font-weight: 600;
-      text-decoration: none;
-      border: 2px solid var(--navy);
-      border-radius: 3px;
-      transition: background 0.15s, color 0.15s;
-    }
-    .cta-button:hover {
-      background: var(--yellow);
-      color: var(--navy);
-      border-color: var(--navy);
-    }
-    .form-note {
-      font-size: 0.78rem;
-      color: var(--gray);
-      display: block;
-      margin-top: 0.65rem;
-    }
-
-    /* ── FAQ ── */
-    .faq-wrap {
-      border-bottom: 2px solid var(--navy);
-      background: var(--gray-light);
-      border-top: 2px solid var(--navy);
-    }
-    .faq-list {
-      margin-top: 2rem;
-      border: 2px solid var(--navy);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-    .faq-item {
-      border-bottom: 2px solid var(--navy);
-      padding: 1.5rem 1.75rem;
-    }
-    .faq-item:last-child {
-      border-bottom: none;
-    }
-    .faq-item h3 {
-      font-family: var(--font-serif);
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 0.5rem;
-      line-height: 1.4;
-    }
-    .faq-item p {
-      font-size: 0.88rem;
-      color: var(--gray);
-      line-height: 1.7;
-      max-width: 640px;
-    }
-
-    /* ── FOOTER CTA ── */
-    .footer-cta-wrap {
-      border-bottom: 2px solid var(--navy);
-    }
-    .footer-cta {
-      padding: 5rem 2rem;
-      max-width: var(--max);
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 4rem;
-      align-items: center;
-    }
-    .footer-cta h2 {
-      font-family: var(--font-serif);
-      font-size: clamp(1.6rem, 3.5vw, 2rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      margin-bottom: 0.5rem;
-    }
-    .footer-cta p {
-      color: var(--gray);
-      font-size: 0.9rem;
-      margin-bottom: 1.5rem;
-    }
-    .footer-cta-bird {
-      width: 120px;
-      opacity: 0.15;
-      flex-shrink: 0;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      padding: 1.5rem 2rem;
-    }
-    .footer-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
+    /* FOOTER CTA */
+    .footer-cta-wrap { border-bottom: 2px solid var(--navy); }
+    .footer-cta { padding: 5rem 2rem; max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 4rem; align-items: center; }
+    .footer-cta h2 { font-family: var(--font-serif); font-size: clamp(1.6rem, 3.5vw, 2rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 0.5rem; }
+    .footer-cta p { color: var(--gray); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .footer-cta .cta-button { display: inline-block; width: auto; }
+    .footer-cta-bird { width: 120px; opacity: 0.15; flex-shrink: 0; }
+    footer { padding: 1.5rem 2rem; }
+    .footer-inner { max-width: var(--max); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; }
     .footer-inner p { font-size: 0.8rem; color: var(--gray); }
     .footer-inner a { color: var(--gray); text-decoration: underline; font-size: 0.8rem; }
     .footer-inner a:hover { color: var(--navy); }
-
     .page-border { border-top: 6px solid var(--navy); }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 700px) {
-      .plan-header { flex-direction: column; gap: 1rem; }
-      .plan-price { text-align: left; }
-      .plan-features { grid-template-columns: 1fr; }
-      .plan-features li { border-right: none; }
-      .plan-features li:nth-last-child(-n+2) { border-bottom: 2px solid var(--navy); }
-      .plan-features li:last-child { border-bottom: none; }
-      .plan-features li.span-full { grid-column: 1; }
+    @media (max-width: 660px) {
+      .plans-grid { grid-template-columns: 1fr; }
+      .plan-card.featured { box-shadow: none; }
+      .pricing-header { padding-top: 2rem; }
       .footer-cta { grid-template-columns: 1fr; gap: 0; }
       .footer-cta-bird { display: none; }
-      .cta-button { width: 100%; text-align: center; }
+      .footer-cta .cta-button { width: 100%; text-align: center; }
     }
   </style>
 </head>
-
 <body class="page-border">
 
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M425WQP7"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M425WQP7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a href="/" class="logo">
-      <img src="canary.jpg" alt="DataCanary bird logo">
-      <span class="logo-text">DataCanary</span>
-    </a>
-    <div class="nav-links">
-      <a href="/pricing">Pricing</a>
-      <a href="/security">Security</a>
-      <a href="https://app.datacanary.io/login">Log in →</a>
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo">
+        <img src="canary.jpg" alt="DataCanary bird logo">
+        <span class="logo-text">DataCanary</span>
+      </a>
+      <div class="nav-links">
+        <a href="/pricing">Pricing</a>
+        <a href="/security">Security</a>
+        <a href="https://app.datacanary.io/login">Log in →</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+  </nav>
+  <div class="nav-drawer" id="nav-drawer">
+    <a href="/pricing">Pricing</a>
+    <a href="/security">Security</a>
+    <a href="https://app.datacanary.io/login">Log in →</a>
   </div>
-</nav>
- 
-<!-- Mobile drawer — place immediately after </nav> -->
-<div class="nav-drawer" id="nav-drawer">
-  <a href="/pricing">Pricing</a>
-  <a href="/security">Security</a>
-  <a href="https://app.datacanary.io/login">Log in →</a>
-</div>
 
-  <!-- PRICING CARD -->
   <div class="pricing-wrap">
-    <div class="section">
+    <div class="pricing-header">
+      <h1>Pricing</h1>
+      <div class="currency-toggle">
+        <button id="btn-eur" class="active" onclick="setCurrency('eur')">€ EUR</button>
+        <button id="btn-usd" onclick="setCurrency('usd')">$ USD</button>
+      </div>
+    </div>
+
+    <div class="plans-grid">
+
+      <!-- FREE -->
       <div class="plan-card">
         <div class="plan-header">
-          <div>
-            <div class="plan-name">100% Free</div>
-            <div class="plan-tagline">Everything you need to keep your GA4 data trustworthy.</div>
-          </div>
-          <div class="plan-price">
-            <div class="amount">€0</div>
-            <div class="period">forever</div>
+          <div class="plan-badge-row"><!-- spacer matches Pro badge height --></div>
+          <div class="plan-name">Free</div>
+          <div class="plan-tagline">Everything you need to keep your GA4 data trustworthy.</div>
+          <div class="plan-price-row">
+            <span class="plan-amount" id="free-price">€0</span>
+            <span class="plan-period">/ forever</span>
           </div>
         </div>
-
         <div class="plan-body">
           <ul class="plan-features">
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <strong style="display:block; color: var(--navy); font-size: 0.88rem; margin-bottom: 0.2rem;">Unlimited GA4 properties</strong>
-                <span style="font-size: 0.82rem; color: var(--gray);">Connect as many properties as you manage.</span>
-              </div>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <strong style="display:block; color: var(--navy); font-size: 0.88rem; margin-bottom: 0.2rem;">Daily automated checks</strong>
-                <span style="font-size: 0.82rem; color: var(--gray);">Runs every day, automatically.</span>
-              </div>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <strong style="display:block; color: var(--navy); font-size: 0.88rem; margin-bottom: 0.2rem;">Event volume monitoring</strong>
-                <span style="font-size: 0.82rem; color: var(--gray);">Alerts when events drop to zero or go out of range.</span>
-              </div>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <strong style="display:block; color: var(--navy); font-size: 0.88rem; margin-bottom: 0.2rem;">Parameter tracking</strong>
-                <span style="font-size: 0.82rem; color: var(--gray);">Know when key parameters disappear from your events.</span>
-              </div>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <strong style="display:block; color: var(--navy); font-size: 0.88rem; margin-bottom: 0.2rem;">Email alerts</strong>
-                <span style="font-size: 0.82rem; color: var(--gray);">Get notified as soon as an issue is detected.</span>
-              </div>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <strong style="display:block; color: var(--navy); font-size: 0.88rem; margin-bottom: 0.2rem;">Metric monitoring</strong>
-                <span style="font-size: 0.82rem; color: var(--gray);">Sessions and users are tracked daily — catch artificial inflation or unexpected drops before they skew your reporting.</span>
-              </div>
-            </li>
+            <li><span class="check">✓</span><div><strong>Unlimited GA4 properties</strong> — connect as many as you manage</div></li>
+            <li><span class="check">✓</span><div><strong>Daily automated checks</strong> — runs every day, automatically</div></li>
+            <li><span class="check">✓</span><div><strong>Event volume monitoring</strong> — alerts when events drop to zero or go out of range</div></li>
+            <li><span class="check">✓</span><div><strong>Parameter tracking</strong> — know when key parameters disappear from your events</div></li>
+            <li><span class="check">✓</span><div><strong>Metric monitoring</strong> — track sessions and users for unexpected drops or inflation</div></li>
+            <li><span class="check">✓</span><div><strong>Email alerts</strong> — get notified as soon as an issue is detected</div></li>
           </ul>
-
-          <a href="https://app.datacanary.io/signup" class="cta-button">Start monitoring free</a>
+          <a href="https://app.datacanary.io/signup" class="cta-button outline">Start monitoring free</a>
           <span class="form-note">No credit card required.</span>
         </div>
       </div>
+
+      <!-- PRO -->
+      <div class="plan-card featured">
+        <div class="plan-header">
+          <div class="plan-badge-row"><span class="plan-badge">Pro</span></div>
+          <div class="plan-name">Everything in Free, plus:</div>
+          <div class="plan-tagline">Faster detection and smarter diagnosis for teams that can't afford surprises.</div>
+          <div class="plan-price-row">
+            <span class="plan-amount" id="pro-price">€75</span>
+            <span class="plan-period">/ month</span>
+          </div>
+        </div>
+        <div class="plan-body">
+          <ul class="plan-features">
+            <li class="feature-divider">Faster monitoring</li>
+            <li><span class="check">✓</span><div><strong>Checks every 4 hours</strong> — catch issues hours sooner, not the next morning</div></li>
+            <li class="feature-divider">Alerts</li>
+            <li><span class="check">✓</span><div><strong>Slack alerts</strong> — get notified where your team already works</div></li>
+            <li class="feature-divider">Deeper checks</li>
+            <li><span class="check">✓</span><div><strong>PII detection</strong> — scan for emails and phone numbers being accidentally captured in event data</div></li>
+            <li class="feature-divider">AI diagnosis</li>
+            <li><span class="check">✓</span><div><strong>GTM integration</strong> — correlate anomalies with container version changes automatically</div></li>
+            <li><span class="check">✓</span><div><strong>GitHub integration</strong> — link tracking issues to the deploy that caused them</div></li>
+            <li><span class="check">✓</span><div><strong>AI-powered root cause analysis</strong> — plain-English explanation of what broke and why, using your GTM and deploy history</div></li>
+          </ul>
+          <a href="https://tally.so/r/aQaRoZ" class="cta-button">Get early access</a>
+          <span class="form-note">Be first to know when Pro launches.</span>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -543,7 +228,6 @@ nav {
     <div class="section">
       <span class="section-label">FAQ</span>
       <h2>Common questions</h2>
-
       <div class="faq-list">
         <div class="faq-item">
           <h3>Is it really free for large accounts too?</h3>
@@ -552,6 +236,14 @@ nav {
         <div class="faq-item">
           <h3>What counts as a GA4 property?</h3>
           <p>Each GA4 property you connect counts as one — regardless of the number of data streams (websites or apps) attached to it. If you manage ten client properties, you can connect all ten.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What is AI-powered root cause analysis?</h3>
+          <p>When DataCanary detects an anomaly, Pro automatically checks whether a GTM container version was published or a GitHub deploy happened around the same time. It then uses that context to generate a plain-English explanation of what likely caused the issue — so you spend less time investigating and more time fixing.</p>
+        </div>
+        <div class="faq-item">
+          <h3>When does Pro launch?</h3>
+          <p>We're actively building it. Join the early access list and you'll be the first to know — and the first to get in.</p>
         </div>
         <div class="faq-item">
           <h3>Does DataCanary need write access to my GA4?</h3>
@@ -581,7 +273,6 @@ nav {
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <p>© 2026 DataCanary</p>
@@ -590,17 +281,30 @@ nav {
   </footer>
 
   <script>
-  const hamburger = document.querySelector('.nav-hamburger');
-  const drawer = document.getElementById('nav-drawer');
- 
-  hamburger.addEventListener('click', function () {
-    const isOpen = drawer.classList.toggle('is-open');
-    hamburger.classList.toggle('is-open', isOpen);
-    hamburger.setAttribute('aria-expanded', isOpen);
-    hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-  });
-</script>
+    const hamburger = document.querySelector('.nav-hamburger');
+    const drawer = document.getElementById('nav-drawer');
+    hamburger.addEventListener('click', function () {
+      const isOpen = drawer.classList.toggle('is-open');
+      hamburger.classList.toggle('is-open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+      hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    });
+
+    const prices = { eur: { free: '€0', pro: '€75' }, usd: { free: '$0', pro: '$79' } };
+    function setCurrency(c) {
+      document.getElementById('free-price').textContent = prices[c].free;
+      document.getElementById('pro-price').textContent = prices[c].pro;
+      document.getElementById('btn-eur').classList.toggle('active', c === 'eur');
+      document.getElementById('btn-usd').classList.toggle('active', c === 'usd');
+    }
+    // Auto-detect: US timezone → default to USD
+    (function () {
+      try {
+        const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+        if (tz.startsWith('America/')) setCurrency('usd');
+      } catch (e) {}
+    })();
+  </script>
 
 </body>
 </html>
-
